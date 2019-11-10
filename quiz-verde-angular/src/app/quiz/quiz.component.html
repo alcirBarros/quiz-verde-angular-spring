@@ -1,0 +1,30 @@
+<section class="dicas">
+    <div class="container">
+        <div class="grid-12">
+            <h2>Instruções</h2>
+            <ul>
+                <li>Cada QUIZ é composto por 10 questões;</li>
+                <li>Cada questão tem apenas uma resposta correta;</li>
+                <li>As perguntas são feitas de forma aleatória;</li>
+            </ul>
+            <a href="/" class="btn">Voltar ao Início</a>
+        </div>
+    </div>
+</section>
+
+<li *ngFor="let perguntaQuaiz001 of perguntaQuizArray">
+    <h:radio-button [uiElementArray]="perguntaQuaiz001.alternativaUiElementArray()" [label]="perguntaQuaiz001.pergunta">
+    </h:radio-button>
+</li>
+
+<section class="finalizar">
+    <a href="#" class="btn">Finalizar</a>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="grid-12">
+            <p>Todos os direitos reservados &copy;</p>
+        </div>
+    </div>
+</footer>
