@@ -3,8 +3,8 @@
         <div class="grid-12">
             <h4>{{label}}</h4>
             <ul>
-                <li *ngFor="let item of list">
-                    <input type="radio" name="opcao1" formControlName="object" [value]="item">{{item.display}}
+                <li *ngFor="let item of list" [style.background-color]="styleClass(item)">
+                    <input type="radio" [disabled]="validar" [value]="item">{{item.display}}
                 </li>
             </ul>
         </div>

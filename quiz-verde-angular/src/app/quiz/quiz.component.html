@@ -13,12 +13,12 @@
 </section>
 
 <li *ngFor="let perguntaQuaiz001 of perguntaQuizArray">
-    <h:radio-button [uiElementArray]="perguntaQuaiz001.alternativaUiElementArray()" [label]="perguntaQuaiz001.pergunta">
+    <h:radio-button [uiElementArray]="perguntaQuaiz001.alternativaUiElementArray()" [label]="perguntaQuaiz001.pergunta" [validar]="validar">
     </h:radio-button>
 </li>
 
 <section class="finalizar">
-    <a href="#" class="btn">Finalizar</a>
+    <button (click)="validarQuiz()" class="btn">Finalizar</button>
 </section>
 
 <footer>

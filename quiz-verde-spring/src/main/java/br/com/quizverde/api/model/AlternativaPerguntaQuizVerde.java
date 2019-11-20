@@ -1,11 +1,11 @@
 package br.com.quizverde.api.model;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import br.com.quizverde.api.enumerator.TipoAlternativaAcertEnum;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -30,11 +30,20 @@ public class AlternativaPerguntaQuizVerde implements Serializable {
     @Column(name = "aqv_alternativa")
     private String alternativa;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "aqv_tipo_alternativa_acert_enum", nullable = false)
+    private TipoAlternativaAcertEnum alternativaAcertEnum = TipoAlternativaAcertEnum.ALTERNATIVA_INCORRETA;
+
     public AlternativaPerguntaQuizVerde() {
     }
 
     public AlternativaPerguntaQuizVerde(String alternativa) {
         this.alternativa = alternativa;
+    }
+
+    public AlternativaPerguntaQuizVerde(String alternativa, TipoAlternativaAcertEnum alternativaAcertEnum) {
+        this.alternativa = alternativa;
+        this.alternativaAcertEnum = alternativaAcertEnum;
     }
 
     public int getId() {
@@ -59,5 +68,13 @@ public class AlternativaPerguntaQuizVerde implements Serializable {
 
     public void setAlternativa(String alternativa) {
         this.alternativa = alternativa;
+    }
+
+    public TipoAlternativaAcertEnum getAlternativaAcertEnum() {
+        return alternativaAcertEnum;
+    }
+
+    public void setAlternativaAcertEnum(TipoAlternativaAcertEnum alternativaAcertEnum) {
+        this.alternativaAcertEnum = alternativaAcertEnum;
     }
 }

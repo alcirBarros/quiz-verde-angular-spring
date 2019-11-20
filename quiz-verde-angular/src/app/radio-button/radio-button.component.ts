@@ -14,6 +14,9 @@ export class RadioButtonComponent implements OnInit {
   @Input('label')
   label: string;
 
+  @Input('validar')
+  validar: boolean = false;
+
   constructor() {
 
   }
@@ -22,4 +25,10 @@ export class RadioButtonComponent implements OnInit {
 
   }
 
+  styleClass(value) : string{
+    console.log(value);
+    if(value.object.alternativaAcertEnum == "ALTERNATIVA_CORRETA" && this.validar){
+      return "#cdf8bf";
+    }
+  }
 } 

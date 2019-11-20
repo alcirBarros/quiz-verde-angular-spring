@@ -264,10 +264,13 @@ footer .container {
     color: #fff;
 }
 
-.pergunta li:nth-child(even) {
-    background: #e6e6e6;
+.pergunta li {
     margin: 10px 0;
     padding: 10px 0;
+}
+
+.pergunta li:nth-child(even) {
+    background: #e6e6e6;
 }
 
 .finalizar .btn {

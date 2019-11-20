@@ -12,8 +12,8 @@ import { AlternativaPerguntaQuiz } from '../shared/pergunta-quiz/alternativa-per
 export class QuizComponent implements OnInit {
 
   public perguntaQuizArray: Array<PerguntaQuiz> = new Array;
+  public validar: boolean = false;
 
-  //public perguntaQuaiz001: PerguntaQuiz = new PerguntaQuiz();
 
   constructor(public backEndService: BackEndService) {
 
@@ -22,6 +22,7 @@ export class QuizComponent implements OnInit {
   ngOnInit() {
     let result: any = this.backEndService.listar().subscribe(dados => this.method(dados));
   }
+
 
 
 
@@ -37,7 +38,10 @@ export class QuizComponent implements OnInit {
     perguntaQuaiz.pergunta = any.pergunta,
     perguntaQuaiz.alternativaPerguntaQuizVerdeList = any.alternativaPerguntaQuizVerdeList;
     return perguntaQuaiz;
+  }
 
+  validarQuiz(){
+    this.validar = true;
   }
 
 }
